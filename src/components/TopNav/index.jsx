@@ -3,6 +3,7 @@ import useDarkMode from "../../hooks/useDarkMode";
 import LOGO from "../../assets/swastik.png";
 import {
   FaSearch,
+  FaGithub,
   FaHashtag,
   FaRegBell,
   FaUserCircle,
@@ -30,22 +31,22 @@ const TopNav = () => {
         <Logo />
 
         {/* LINKS */}
-        <div className="hidden sm:flex items-center justify-between md:gap-10 rounded-md  ">
+        <div className="hidden sm:flex items-center justify-between md:gap-10 rounded-md ">
           <a
             href="#"
-            className="transition px-4 py-2 inline-block text-lg text-amber-500 font-semibold hover:bg-slate-500/20 rounded-md "
+            className="transition px-4 py-2 inline-block text-lg text-amber-500 font-semibold hover:text-emerald-500 hover:bg-slate-300/60 rounded-md "
           >
             Home
           </a>
           <a
             href="#about"
-            className="transition px-4 py-2 inline-block text-lg text-amber-500 font-semibold hover:bg-slate-500/20 rounded-md "
+            className="transition px-4 py-2 inline-block text-lg text-amber-500 font-semibold hover:text-emerald-500 hover:bg-slate-300/60 rounded-md "
           >
             About Us
           </a>
           <a
             href="#contact"
-            className="transition px-4 py-2 inline-block text-lg text-amber-500 font-semibold hover:bg-slate-500/20 rounded-md "
+            className="transition px-4 py-2 inline-block text-lg text-amber-500 font-semibold hover:text-emerald-500 hover:bg-slate-300/60 rounded-md "
           >
             Contact
           </a>
@@ -56,14 +57,14 @@ const TopNav = () => {
         <div className="flex items-center justify-evenly">
           <ThemeButton />
           <ContactMe />
-          {/* TOGGLE */}
+        {/* TOGGLE */}
           <button
             onClick={() => setToggle(!toggle)}
             className="sm:hidden transition p-1 rounded-md text-amber-500/70 hover:text-amber-500"
           >
             {toggle ? <MdClose size={36} /> : <BiMenuAltRight size={36} />}
           </button>
-          {/* TOGGLE-end */}
+        {/* TOGGLE-end */}
         </div>
         {/* BUTTONS-end */}
 
@@ -142,34 +143,38 @@ const ThemeButton = () => {
 };
 
 const ContactMe = () => (
-  <a href="#contact" rel="noopener noreferrer">
-    <BsFillChatLeftTextFill
-      size="24"
-      className="top-nav-icon text-fuchsia-500 ml-4 mr-3 transition duration-300 ease-in-out hover:text-amber-400"
+  <a
+    href="https://github.com/SsBhoyar"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaGithub
+      size="30"
+      className="top-nav-icon text-zinc-900 ml-4 mr-3 transition duration-300 ease-in-out hover:text-amber-400"
     />
   </a>
 );
 
-const Search = () => (
-  <div
-    className="search w-1/5 flex items-center justify-start 
-  bg-gray-400 dark:bg-gray-600
-  text-gray-200
-  px-2 h-9 ml-0 mr-0 
-  rounded-md shadow-md
-  transition duration-300 ease-in-out"
-  >
-    <input
-      type="text"
-      placeholder="Search..."
-      className="search-input w-full font-sans font-semibold
-    bg-transparent outline-none 
-    text-gray-500  placeholder-gray-600
-    pl-1 rounded"
-    />
-    <FaSearch size="18" className="text-secondary my-auto" />
-  </div>
-);
+// const Search = () => (
+//   <div
+//     className="search w-1/5 flex items-center justify-start
+//   bg-gray-400 dark:bg-gray-600
+//   text-gray-200
+//   px-2 h-9 ml-0 mr-0
+//   rounded-md shadow-md
+//   transition duration-300 ease-in-out"
+//   >
+//     <input
+//       type="text"
+//       placeholder="Search..."
+//       className="search-input w-full font-sans font-semibold
+//     bg-transparent outline-none
+//     text-gray-500  placeholder-gray-600
+//     pl-1 rounded"
+//     />
+//     <FaSearch size="18" className="text-secondary my-auto" />
+//   </div>
+// );
 
 // const Title = () => (
 //   <h5
@@ -187,4 +192,5 @@ const Search = () => (
 //     className="top-nav-icon text-gray-600 ml-4 mr-3 transition duration-300 ease-in-out hover:text-amber-500"
 //   />
 // );
+
 export default TopNav;

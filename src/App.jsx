@@ -36,7 +36,7 @@ function App() {
         {/* <FixedSidebar /> */}
         <Newsletter />
       </main>
-      <Slider />
+      {/* <Slider /> */}
 
       <ScrollToTop />
       <Footer />
